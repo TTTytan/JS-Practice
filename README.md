@@ -1,4 +1,4 @@
-# JS-Practice
-Learning javascript from the beginning. Throwing in Git practice, too.
+# Practice
+Learning javascript, git, gulp, etc!
 
-Throwing all JS practice files in here.
+Throwing all practice files in here.
