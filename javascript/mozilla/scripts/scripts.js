@@ -1,11 +1,18 @@
 (function() {
-  var myHeader = document.querySelector('h1');
-  myHeader.innerHTML = 'future-ink Rocks!';
-})();
-
-(function() {
-
+  var myHeading = document.querySelector('h1');
   var button = document.getElementById('toggleImg');
+  var userButton = document.getElementById('changeUser');
+
+  if(!localStorage.getItem('name')) {
+    setUserName();
+  } else {
+    var storedName = localStorage.getItem('name');
+    myHeading.innerHTML = 'Mozilla is cool, ' + storedName;
+  }
+
+  userButton.onclick = function() {
+    setUserName();
+  }
   
   button.addEventListener('click', changeImg, false);
 
@@ -17,6 +24,12 @@
     } else {
       currentImg.setAttribute('src', 'images/firefox-icon.png');
     }
+  }
+
+  function setUserName() {
+    var myName = prompt('Please enter your name.');
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
   }
 
 })();
