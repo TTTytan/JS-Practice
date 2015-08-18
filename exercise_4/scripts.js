@@ -11,22 +11,30 @@
   //   // return total;
   // }
 
-  //console.log(range(1,10));
+  console.log(range(1,10,1));
   console.log(sum(range(1,10)));
-  console.log();
+  console.log(range(1, 10, 2));
+  console.log(range(5, 2, -1));
 
 })(); 
 
 // range(1,10);
-function range (start, end) {
+function range (start, end, step) {
 
   var storedRange = [];
+  var rangeLength = 0;
 
-  for (var n = 0; n <= (end - start); n++) {
-    if (n == 0) {
+  if(start > end) {
+    rangeLength = +start - +end;
+  } else {
+    rangeLength = +end - +start;
+  }
+
+  for (var n = 0; n <= rangeLength; n++) {
+    if (n === 0) {
       storedRange[n] = start;
     } else {
-      storedRange[n] = storedRange[n - 1] + 1;
+      storedRange[n] = storedRange[n - 1] + (step || 0);
     }
   }
   return storedRange;
@@ -37,13 +45,11 @@ function sum(range) {
   var total = 0;
 
   for(var n = 0; n < range.length; n++) {
-    
-    total = range[n] + range[n+1];
+
+    total += +range[n]; //unary + to ensure !NaN
 
   }
 
   return total;
-  //return range[0]+range[1]+range[2]+range[3]+range[4]+range[5]+range[6]+range[7]+range[8]+range[9];
-
 }
 
