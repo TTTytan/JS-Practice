@@ -13,10 +13,15 @@ function range (start, end, step) {
   var storedRange = [];
   var rangeLength = 0;
 
+  if(step === undefined) { 
+    step = 1;
+  }
+
   if(start > end) {
     rangeLength = +start - +end;
   } else {
-    rangeLength = +end - +start;
+    rangeLength = +(end - start);
+    rangeLength /= +step;
   }
 
   for (var n = 0; n <= rangeLength; n++) {
