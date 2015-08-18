@@ -11,7 +11,7 @@
   //   // return total;
   // }
 
-  console.log(range(1,10,1));
+  console.log(range(1,10));
   console.log(sum(range(1,10)));
   console.log(range(1, 10, 2));
   console.log(range(5, 2, -1));
@@ -34,7 +34,7 @@ function range (start, end, step) {
     if (n === 0) {
       storedRange[n] = start;
     } else {
-      storedRange[n] = storedRange[n - 1] + (step || 0);
+      storedRange[n] = storedRange[n - 1] + (step || 1);
     }
   }
   return storedRange;
