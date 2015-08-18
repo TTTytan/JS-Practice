@@ -1,16 +1,5 @@
 (function() {
 
-
-  // function sum (n) {
-  //   return n[2];
-  //   //return n.length;
-  //   // var total = n[n.length];
-  //   // for (var i = n.length; i > 0; i--) {
-  //   //   total += n[i-1];
-  //   // }
-  //   // return total;
-  // }
-
   console.log(range(1,10));
   console.log(sum(range(1,10)));
   console.log(range(1, 10, 2));
@@ -40,6 +29,7 @@ function range (start, end, step) {
   return storedRange;
 }
 
+// sum of range[]
 function sum(range) {
 
   var total = 0;
