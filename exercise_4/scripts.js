@@ -13,6 +13,7 @@
 
   //console.log(range(1,10));
   console.log(sum(range(1,10)));
+  console.log();
 
 })(); 
 
@@ -36,11 +37,13 @@ function sum(range) {
   var total = 0;
 
   for(var n = 0; n < range.length; n++) {
-
+    
     total = range[n] + range[n+1];
 
   }
 
   return total;
+  //return range[0]+range[1]+range[2]+range[3]+range[4]+range[5]+range[6]+range[7]+range[8]+range[9];
+
 }
 
