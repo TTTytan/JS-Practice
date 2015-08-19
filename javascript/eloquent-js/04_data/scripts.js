@@ -8,10 +8,27 @@
   //console.log(reverseArray(["A", "B", "C","D","E"]));
 
 
-  var arrayValue = [1, 2, 3, 4, 5, 6, 7, 8];
-  reverseArrayInPlace(arrayValue);
+  //var arrayValue = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  //reverseArrayInPlace(arrayValue);
 
-})(); 
+  console.log(arrayToList([10,20]));
+
+})();
+
+// A List
+function arrayToList(arrayValues) {
+  var list = {};
+    for (var i = arrayValues.length; i > 0; i--) {
+
+
+      rest: {
+        value: arrayValues.length
+      }
+    }
+
+    return list;
+}
+
 
 // Reversing an Array
 function reverseArray(arrayValues) {
@@ -30,24 +47,27 @@ function reverseArray(arrayValues) {
 
 }
 
-// grab last and first and swap them 
+// grab last and first and swap them
 // leave middle value alone if odd
 // swap middle two values if even
-// 
+//
 // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
 // [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 function reverseArrayInPlace(arrayValues) {
-  var arrayCount = arrayValues.length;
+  var arrayCount = arrayValues;
   console.log(arrayCount);
   var output = [];
 
-  for (var i = 0; i < arrayCount; i++) {
-    var storeFirst = arrayValues.shift();
-    var storeLast = arrayValues.pop();
-    console.log(storeFirst + 'first');
-    console.log(storeLast + 'last');
-  };
+  for (var i = 0; i < arrayValues.length; i++) {
+    output[i] = arrayValues[arrayValues.length - 1 - i];
+    output[arrayValues.length - 1 - i] = arrayValues[i];
+  }
+
+  return console.log(output);
 }
 
 // function reverseArrayInPlace(arrayValues) {
@@ -73,7 +93,7 @@ function reverseArrayInPlace(arrayValues) {
 //     console.log(arrayValues);
 
 //     //arrayValues.pop();
-    
+
 //     for (var x = ((Math.ceil(arrayLength / 2))); x < arrayLength; x++) {
 
 //       holdArrayValue = arrayValues.pop();
@@ -113,12 +133,12 @@ function reverseArrayInPlace(arrayValues) {
 
 
 // range(1,10);
-function range (start, end, step) {
+function range(start, end, step) {
 
   var storedRange = [];
   var rangeLength = 0;
 
-  if(step === undefined) { 
+  if(step === undefined) {
     step = 1;
   }
 
@@ -152,4 +172,3 @@ function sum(range) {
 
   return total;
 }
-
